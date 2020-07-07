@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar [color]="chatCfg.theme">
+    <ion-button slot="start" color="light" fill="clear" (click)="closeModal()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>{{chatCfg.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [scrollEvents]="true">
+  <div *ngIf="chat && !loading">
+    <ion-card *ngFor="let message of chat.messages;let i = index; let last = last"
+      [class]="message.user.id !== user.uid ? 'ion-float-left' : 'ion-float-right'">
+      <ion-card-header>
+        <ion-card-title [color]="chatCfg.theme" *ngIf="message.user.id !== user.uid">{{message.user.mail.split('@')[0]}}
+        </ion-card-title>
+        <!--         <ion-card-subtitle>{{message.created_at | moment}}</ion-card-subtitle>  -->
+        <ion-card-subtitle>{{message.created_at | date: 'dd/MM/yy hh:mm'}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{message.text}}
+        {{last ? updateScroll(i) : ''}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="loading">
+    <ion-card class="ion-float-left">
+      <ion-card-content>
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer padding>
+  <ion-item>
+    <ion-textarea name="msg" [(ngModel)]="msg" rows="1" [value] placeholder="Ingresá tu mensaje..." maxlength="21">
+    </ion-textarea>
+    <ion-button [color]="chatCfg.theme" fill="clear" (click)="sendMensaje()">
+      <ion-icon slot="end" name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>

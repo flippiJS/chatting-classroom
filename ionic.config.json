@@ -1,0 +1,7 @@
+{
+  "name": "conversando-aula",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-button slot="end" fill="clear" (click)="logOut()">
+      <ion-icon color="light" name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">
+      Conversando en el Aula
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card (click)="openChat('pps4a')" color="warning">
+    <img src="./assets/chat1.jpg" />
+    <ion-card-header>
+      <ion-card-title>PPS-4A</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card (click)="openChat('pps4b')" color="secondary">
+    <img src="./assets/chat2.jpg" />
+    <ion-card-header>
+      <ion-card-title>PPS-4B</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!--   <div class="ion-padding" *ngFor="let chat of chatRooms">
+    <ion-label class="ion-text-center">
+      <h2><b>{{chat.name}}</b></h2>
+    </ion-label>
+    <ion-button class="marks-buttons" [color]="chat.color" expand="block" (click)="openChat(chat)">
+      <img [src]="chat.img" alt="">
+    </ion-button>
+  </div> -->
+</ion-content>
