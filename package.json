@@ -1,6 +1,6 @@
 {
-  "name": "conversando-aula",
-  "description": "Conversando Aula - PPS UTN FRA 2020 - Franco Lippi",
+  "name": "chatting-classroom",
+  "description": "Conversando Aula - PPS UTN FRA 2020",
   "version": "0.0.1",
   "author": "flippi",
   "scripts": {
