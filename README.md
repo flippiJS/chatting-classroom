@@ -1,2 +1,4 @@
-# conversando-aula
-Conversando en el Aula - PPS 2020
+# chatting-classroom
+A simple chat app in the classroom
+
+PPS 2020
